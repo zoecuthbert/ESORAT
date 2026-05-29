@@ -75,11 +75,15 @@ function checkPasswords() {
   const p2 = document.getElementById("pass2").value;
   const p3 = document.getElementById("pass3").value;
 
-  const correct1 = "0606 2026 3502 5470","0606202635025470";
-  const correct2 = "06/26","0626";
-  const correct3 = "RAT","rat";
+  const correct1 = ["0606 2026 3502 5470", "0606202635025470"];
+  const correct2 = ["06/26", "0626"];
+  const correct3 = ["RAT", "rat", "Rat"];
 
-  if (p1 === correct1 && p2 === correct2 && p3 === correct3) {
+  if (
+    correct1.includes(p1) &&
+    correct2.includes(p2) &&
+    correct3.includes(p3)
+  ) {
     window.location.href = "https://phishingpond.framer.website/";
   } else {
     alert("One or more details are incorrect");
